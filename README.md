@@ -37,9 +37,9 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **[initialization instance variables]**
-- **[Classes inheritance]**
-- **[Override class]**
+- **[Use the decorator design pattern]**
+- **[Capitalize decorator]**
+- **[Trimmer decorator]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -82,7 +82,6 @@ Example command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[use the "Decorator" design pattern]**
 - [ ] **[add basil UI]**
 - [ ] **[preserve data]**
 
