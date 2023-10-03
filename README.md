@@ -37,9 +37,9 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **[initialization instance variables]**
-- **[Classes inheritance]**
-- **[Override class]**
+- **[Use the decorator design pattern]**
+- **[Capitalize decorator]**
+- **[Trimmer decorator]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -75,14 +75,13 @@ Example command:
 👤 **Author1**
 
 - GitHub: [@Bhekisile](https://github.com/Bhekisile)
-- LinkedIn: [BhekisileJozi](https://www.linkedin.com/in/bhekisile-jozi-b9823369/)
+- LinkedIn: [BhekisileJozi](https://www.linkedin.com/in/bhekisile-j-b9823369/)
 
 
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[use the "Decorator" design pattern]**
 - [ ] **[add basil UI]**
 - [ ] **[preserve data]**
 
@@ -115,6 +114,8 @@ I would like to thank Microverse for giving me all the necessary knowledge I nee
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
 
 This project is [MIT](./MIT.md) licensed.
 
