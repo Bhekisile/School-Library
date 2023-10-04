@@ -20,7 +20,7 @@
 
 # 📖 [School Library] <a name="about-project"></a>
 
-**[School Library]** is an OOP Ruby project that uses classes Person, Student and Teacher to build school library application.
+**[School Library]** is an OOP Ruby project that uses classes to represent Person, Student, Teacher, Rental, Book and Classroom to build school library application.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -37,9 +37,7 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **[Use the decorator design pattern]**
-- **[Capitalize decorator]**
-- **[Trimmer decorator]**
+- **[Create associations between classes]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
