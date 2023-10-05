@@ -17,7 +17,7 @@ class App
 
   def list_all_books
     puts 'Books unavailable' if @books.empty?
-    puts 
+    puts
     @books.each do |book|
       puts "Title: #{book.title}, Author: #{book.author}"
     end
