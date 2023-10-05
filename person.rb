@@ -3,12 +3,14 @@ require './capitalize_decorator'
 require './trimmer_decorator'
 
 class Person < Nameable
-  attr_accessor :name, :age
-  attr_reader :id, :rentals
+  @id_counter = 0
 
-  def initialize(age, name = 'Unknown', parent_permission: true)
+  attr_accessor :id, :name, :age, :rentals
+
+  def initialize(name = 'Unknown', age = 0, parent_permission: true)
     super()
-    @id = Random.rand(1..1000)
+    # @id = Random.rand(1..1000)
+    @id = generate_id
     @name = name
     @age = age
     @parent_permission = parent_permission
@@ -23,7 +25,7 @@ class Person < Nameable
     @name
   end
 
-  def add_rental(book, date)
+  def add_rental(date, book)
     Rental.new(date, book, self)
   end
 
@@ -32,11 +34,9 @@ class Person < Nameable
   def of_age?
     age.to_i >= 18
   end
-end
 
-person = Person.new(22, 'maximilianus')
-person.correct_name
-capitalized_person = CapitalizeDecorator.new(person)
-puts capitalized_person.correct_name
-capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
-puts capitalized_trimmed_person.correct_name
+  def generate_id
+    self.class.instance_variable_get(:@id_counter) || self.class.instance_variable_set(:@id_counter, 0)
+    self.class.instance_variable_set(:@id_counter, self.class.instance_variable_get(:@id_counter) + 1)
+  end
+end
