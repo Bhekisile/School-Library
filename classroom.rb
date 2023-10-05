@@ -1,7 +1,8 @@
 class Classroom
-  attr_accessor :@label, :@students
+  attr_accessor :label, :students
 
   def initialize(label)
+    super()
     @label = label
     @students = []
   end
