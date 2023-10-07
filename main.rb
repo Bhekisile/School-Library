@@ -33,6 +33,7 @@ class Main
         puts 'Exiting...'
         @running = false
       },
+
       'default' => -> { puts 'Invalid value' }
     }
 
