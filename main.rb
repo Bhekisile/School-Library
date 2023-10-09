@@ -1,4 +1,7 @@
 require './app'
+require_relative 'list'
+require_relative 'book_app'
+require_relative 'rental_app'
 
 class Main
   def initialize
@@ -22,13 +25,14 @@ class Main
   end
 
   def choose_option(option)
+    list = List.new
     actions = {
-      '1' => -> { @app.list_all_books },
-      '2' => -> { @app.list_all_people },
+      '1' => -> { list.list_all_books(@app.books) },
+      '2' => -> { list.list_all_people(@app.people) },
       '3' => -> { @app.create_a_person },
-      '4' => -> { @app.create_a_book },
-      '5' => -> { @app.create_a_rental },
-      '6' => -> { @app.list_all_rentals },
+      '4' => -> { BookApp.new.create_a_book(@app.books) },
+      '5' => -> { RentalApp.new.create_a_rental(@app.books, @app.people) },
+      '6' => -> { list.list_all_rentals(@app.people) },
       '7' => lambda {
         puts 'Exiting...'
         @running = false
