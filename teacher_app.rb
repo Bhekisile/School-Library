@@ -9,7 +9,7 @@ class TeacherApp
     puts 'Specialization'
     specialization = gets.chomp
     teacher = Teacher.new(age, specialization, name)
-    people[teacher.id] = teacher
+    people << teacher
     puts 'Teacher created successfully'
   end
 end

@@ -6,7 +6,7 @@ class App
 
   def initialize
     @books = []
-    @people = {}
+    @people = []
   end
 
   def create_a_person

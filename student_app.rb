@@ -19,7 +19,7 @@ class StudentApp
                         end
 
     student = Student.new(age, nil, name, parent_permission: parent_permission)
-    people[student.id] = student
+    people << student
     puts 'Student created successfully.'
     puts
   end

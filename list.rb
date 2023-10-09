@@ -10,7 +10,7 @@ class List
   def list_all_people(people)
     puts 'List is empty' if people.empty?
     puts
-    people.values.each do |person|
+    people.each do |person|
       puts "[#{person.class}] ID: #{person.id}, Name: #{person.name}, Age: #{person.age}"
       puts
     end
@@ -20,7 +20,7 @@ class List
     print 'ID of person: '
     person_id = gets.chomp.to_i
 
-    person_obj = people.values.find { |person| person.id == person_id }
+    person_obj = people.find { |person| person.id == person_id }
 
     if person_obj.nil?
       puts 'Person not found'

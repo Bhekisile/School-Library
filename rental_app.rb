@@ -11,7 +11,7 @@ class RentalApp
   
     puts 'Select a person from the following list by number/index (not id)'
     puts
-    people.values.each_with_index do |person, index|
+    people.each_with_index do |person, index|
       puts "#{index}) [#{person.class}] ID: #{person.id}, Name: #{person.name}, Age: #{person.age}"
     end
   
@@ -21,7 +21,7 @@ class RentalApp
     rental_date = gets.chomp
   
     if valid_indices?(person_index, book_index, books, people)
-      Rental.new(rental_date, books[book_index], people.values[person_index])
+      Rental.new(rental_date, books[book_index], people[person_index])
       puts 'Rental created successfully'
     else
       puts 'Invalid person or book selected.'
