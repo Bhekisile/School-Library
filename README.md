@@ -37,7 +37,7 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **[Add basic UI]**
+- **[Followed SOLID principle to refactor the code]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -70,11 +70,15 @@ Example command:
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Author1**
+👤 **Bhekisile Jozi**
 
 - GitHub: [@Bhekisile](https://github.com/Bhekisile)
 - LinkedIn: [BhekisileJozi](https://www.linkedin.com/in/bhekisile-j-b9823369/)
 
+👤 *Akorede*
+
+- GitHub: [Akorede](https://github.com/Akorede3133)
+- Twitter: [Akorede](https://twitter.com/SaheedAkorede7)
 
 <!-- FUTURE FEATURES -->
 
