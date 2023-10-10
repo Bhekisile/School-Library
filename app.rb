@@ -1,13 +1,32 @@
+require 'json'
 require_relative 'student_app'
 require_relative 'teacher_app'
+require_relative 'book_storage'
+require_relative 'people_storage'
+require_relative 'rentals_storage'
 
 class App
-  attr_accessor :books, :people
+  attr_accessor :books, :people, :rentals
 
   def initialize
     @books = []
     @people = []
+    @rentals = []
+    load_data
   end
+
+  def save_data
+    BookStorage.new.save_book(@books)
+    PeopleStorage.new.save_people(@people)
+    RentalsStorage.new.save_rentals(@rentals)
+  end
+
+  def load_data
+    BookStorage.new.load_books(@books)
+    PeopleStorage.new.load_people(@people)
+    RentalsStorage.new.load_rentals(@rentals, @books, @people)
+  end
+
 
   def create_a_person
     puts

@@ -31,16 +31,17 @@ class Main
       '2' => -> { list.list_all_people(@app.people) },
       '3' => -> { @app.create_a_person },
       '4' => -> { BookApp.new.create_a_book(@app.books) },
-      '5' => -> { RentalApp.new.create_a_rental(@app.books, @app.people) },
-      '6' => -> { list.list_all_rentals(@app.people) },
+      '5' => -> { RentalApp.new.create_a_rental(@app.books, @app.people, @app.rentals) },
+      '6' => -> { list.list_all_rentals(@app.people, @app.rentals) },
       '7' => lambda {
+        @app.save_data
         puts 'Exiting...'
         @running = false
       },
       'default' => -> { puts 'Invalid value' }
     }
 
-    action = actions[option] || actions[default]
+    action = actions[option] || actions['default']
     action.call
   end
 
