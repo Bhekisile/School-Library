@@ -16,6 +16,7 @@ class App
   end
 
   def save_data
+    puts 'saving data...'
     BookStorage.new.save_book(@books)
     PeopleStorage.new.save_people(@people)
     RentalsStorage.new.save_rentals(@rentals)
