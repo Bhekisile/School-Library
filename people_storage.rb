@@ -4,7 +4,7 @@ class PeopleStorage
       data = {
         'name' => person.name,
         'age' => person.age,
-        'type' => person.class.name,
+        'type' => person.class.name
       }
 
       if person.is_a?(Student)
@@ -14,22 +14,19 @@ class PeopleStorage
       end
       data
     end
-    File.open('people.json', 'w') do |file|
-      file.write(JSON.generate(json_people))
-    end
+    File.write('people.json', JSON.generate(json_people))
   end
 
   def load_people(people)
-    if File.exist?('people.json')
-      people_data = JSON.parse(File.read('people.json'))
-      people_data.each do |person|
-        if person['type'] == 'Student'
-          people << Student.new(person['age'], nil, person['name'], parent_permission: person['parent_permission'])
-        elsif person['type'] == 'Teacher'
-          people << Teacher.new(person['age'], person['specialization'], person['name'])
-        end
+    return unless File.exist?('people.json')
+
+    people_data = JSON.parse(File.read('people.json'))
+    people_data.each do |person|
+      if person['type'] == 'Student'
+        people << Student.new(person['age'], nil, person['name'], parent_permission: person['parent_permission'])
+      elsif person['type'] == 'Teacher'
+        people << Teacher.new(person['age'], person['specialization'], person['name'])
       end
     end
   end
-
 end

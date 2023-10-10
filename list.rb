@@ -16,12 +16,12 @@ class List
     end
   end
 
-  def list_all_rentals(people, rentals)
+  def list_all_rentals(_people, rentals)
     print 'ID of person: '
     person_id = gets.chomp.to_i
 
     puts 'Rentals: '
-    rental = rentals.find { |rental| rental.person.id == person_id}
+    rental = rentals.find { |rent| rent.person.id == person_id }
     if rental.nil?
       puts 'Person not found'
     else

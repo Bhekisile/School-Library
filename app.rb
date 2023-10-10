@@ -28,7 +28,6 @@ class App
     RentalsStorage.new.load_rentals(@rentals, @books, @people)
   end
 
-
   def create_a_person
     puts
     print 'Do you want to create a student (1) or a teacher (2)? (Input the number): '

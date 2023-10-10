@@ -3,18 +3,18 @@ require './capitalize_decorator'
 require './trimmer_decorator'
 
 class Person < Nameable
-
-  @@count = 1
+  # @@count = 1
   attr_accessor :id, :name, :age, :rentals
 
   def initialize(age = 0, name = 'Unknown', parent_permission: true)
     super()
-     @id = @@count
-     @@count += 1
-      @name = name
-      @age = age
-      @parent_permission = parent_permission
-      @rentals = []
+    @@count = 1
+    @id = @@count
+    @@count += 1
+    @name = name
+    @age = age
+    @parent_permission = parent_permission
+    @rentals = []
   end
 
   def can_use_services?

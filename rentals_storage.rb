@@ -15,33 +15,30 @@ class RentalsStorage
       }
     end
 
-    File.open('rentals.json', 'w') do |file|
-      file.write(JSON.generate(rentals_json))
-    end
+    File.write('rentals.json', JSON.generate(rentals_json))
   end
 
   def load_rentals(rentals, books, people)
-    if File.exist?('rentals.json')
-      rentals_data = JSON.parse(File.read('rentals.json'))
+    return unless File.exist?('rentals.json')
 
-      rentals_data.each do |rental|
-        duplicate_file = rentals.find do |data|
-          rental['date'] == data.date && rental['book']['author'] == data.book.author && rental['book']['title'] == data.book.title
-        end
+    rentals_data = JSON.parse(File.read('rentals.json'))
 
-        unless duplicate_file
-          date = rental['date']
-          book_instance = books.find do |book|
-            rental['book']['title'] == book.title && rental['book']['author'] == book.author
-          end
-
-          person_instance = people.find do |person|
-            rental['person']['id'] == person.id
-          end
-          rentals << Rental.new(date, book_instance, person_instance)
-        end
+    rentals_data.each do |rental|
+      duplicate_file = rentals.find do |data|
+        rental['date'] == data.date && rental['book']['author'] == data.book.author && rental['book']['title'] == data.book.title
       end
 
+      next if duplicate_file
+
+      date = rental['date']
+      book_instance = books.find do |book|
+        rental['book']['title'] == book.title && rental['book']['author'] == book.author
+      end
+
+      person_instance = people.find do |person|
+        rental['person']['id'] == person.id
+      end
+      rentals << Rental.new(date, book_instance, person_instance)
     end
   end
 end

@@ -8,17 +8,15 @@ class BookStorage
         'author' => book.author
       }
     end
-    File.open('books.json', 'w') do |file|
-      file.write(JSON.generate(json_books))
-    end
+    File.write('books.json', JSON.generate(json_books))
   end
 
   def load_books(books)
-    if File.exist?('books.json')
-      retrieved_books = JSON.parse(File.read('books.json'))
-      retrieved_books.each do |book|
-        books << Book.new(book['title'], book['author'])
-      end
+    return unless File.exist?('books.json')
+
+    retrieved_books = JSON.parse(File.read('books.json'))
+    retrieved_books.each do |book|
+      books << Book.new(book['title'], book['author'])
     end
   end
 end
