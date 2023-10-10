@@ -2,6 +2,7 @@ require './nameable'
 require './capitalize_decorator'
 require './trimmer_decorator'
 
+# rubocop:disable Style/ClassVars
 class Person < Nameable
   @@count = 1
   attr_accessor :id, :name, :age, :rentals
@@ -34,3 +35,4 @@ class Person < Nameable
     age.to_i >= 18
   end
 end
+# rubocop:enable Style/ClassVars
