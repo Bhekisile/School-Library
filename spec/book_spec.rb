@@ -19,7 +19,7 @@ describe Book do
   describe '#rentals' do
     let(:person) { Person.new(35, 'Nancy', parent_permission: true) }
     it 'creates a new rental object and adds it to the rentals array' do
-      rental = book.add_rental(person, '2023-04-26')
+      book.add_rental(person, '2023-04-26')
       expect(book.rentals.length).to eq(1)
     end
   end
