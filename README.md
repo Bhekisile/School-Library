@@ -37,7 +37,7 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **[Followed SOLID principle to refactor the code]**
+- **[Preserve data]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -85,7 +85,6 @@ Example command:
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [ ] **[unit tests]**
-- [ ] **[preserve data]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

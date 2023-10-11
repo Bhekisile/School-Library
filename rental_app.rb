@@ -1,7 +1,7 @@
 require_relative 'rental'
 
 class RentalApp
-  def create_a_rental(books, people)
+  def create_a_rental(books, people, rentals)
     puts 'Select a book from the following list by number'
     books.each_with_index do |book, index|
       puts "#{index}) Title: #{book.title}, Author: #{book.author}"
@@ -21,7 +21,7 @@ class RentalApp
     rental_date = gets.chomp
 
     if valid_indices?(person_index, book_index, books, people)
-      Rental.new(rental_date, books[book_index], people[person_index])
+      rentals << Rental.new(rental_date, books[book_index], people[person_index])
       puts 'Rental created successfully'
     else
       puts 'Invalid person or book selected.'

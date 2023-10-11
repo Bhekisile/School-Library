@@ -16,20 +16,18 @@ class List
     end
   end
 
-  def list_all_rentals(people)
+  def list_all_rentals(_people, rentals)
     print 'ID of person: '
     person_id = gets.chomp.to_i
 
-    person_obj = people.find { |person| person.id == person_id }
-
-    if person_obj.nil?
-      puts 'Person not found'
-      return
-    end
-
     puts 'Rentals: '
-    person_obj.rentals.each do |rental|
-      puts "Date: #{rental.date} Book: #{rental.book.title} by #{rental.book.author}"
+    rental = rentals.find { |rent| rent.person.id == person_id }
+    if rental.nil?
+      puts 'Person not found'
+    else
+      rental.person.rentals.each do |rent|
+        puts "Date: #{rent.date} Book: #{rent.book.title} by #{rent.book.author}"
+      end
     end
   end
 end
